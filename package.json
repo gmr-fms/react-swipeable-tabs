@@ -1,5 +1,5 @@
 {
-  "name": "react-swipeable-tabs",
+  "name": "jnarwold-react-swipeable-tabs",
   "version": "2.3.0",
   "description": "React Swipeable tabs",
   "homepage": "https://github.com/kareem3d/react-swipeable-tabs",
@@ -12,7 +12,7 @@
   "author": "Kareem Mohamed <kareemd3d.a@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kareem3d/react-swipeable-tabs.git"
+    "url": "git://github.com/jnarwold/react-swipeable-tabs.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -60,6 +60,6 @@
     "react": "15.3.2",
     "react-hammerjs": "^0.5.0",
     "react-measure": "^2.0.2",
-    "react-motion": "^0.4.5"
+    "react-motion": "git+https://github.com/jnarwold/react-motion.git"
   }
 }
