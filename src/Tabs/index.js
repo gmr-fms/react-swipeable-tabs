@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Hammer from 'react-hammerjs';
 import Measure from 'react-measure';
-import { Motion, spring } from 'react-motion';
+import { Motion, spring } from '@gmr-fms/react-motion';
 import differenceBy from 'lodash.differenceby';
 import ListBorder from './ListBorder';
 import TabList from './TabList';
@@ -15,96 +16,96 @@ export default class Tabs extends React.Component {
     /**
      * Array of tabs to render.
      */
-    items: React.PropTypes.arrayOf(React.PropTypes.element).isRequired,
+    items: PropTypes.arrayOf(PropTypes.element).isRequired,
     /**
      * When an item is clicked, this is called with `(item, index)`.
      */
-    onItemClick: React.PropTypes.func.isRequired,
+    onItemClick: PropTypes.func.isRequired,
     /**
      * This is only useful if you want to control the active item index from outside.
      */
-    activeItemIndex: React.PropTypes.number,
+    activeItemIndex: PropTypes.number,
     /**
      * Item class name.
      */
-    itemClassName: React.PropTypes.string,
+    itemClassName: PropTypes.string,
     /**
      * Item style.
      */
-    itemStyle: React.PropTypes.object,
+    itemStyle: PropTypes.object,
     /**
      * Active item style.
      */
-    activeStyle: React.PropTypes.object,
+    activeStyle: PropTypes.object,
     /**
      * Whether or not to align center if items total width smaller than container width.
      */
-    alignCenter: React.PropTypes.bool,
+    alignCenter: PropTypes.bool,
     /**
      * This option will fit all items on desktop
      */
-    fitItems: React.PropTypes.bool,
+    fitItems: PropTypes.bool,
     /**
      * This prop defines if the first item doesnt have left padding.
      * We use this to calculate the border position for the first element.
      */
-    noFirstLeftPadding: React.PropTypes.bool,
+    noFirstLeftPadding: PropTypes.bool,
     /**
      * This prop defines if the last item doesnt have right padding.
      * We use this to calculate the border position for the last element.
      */
-    noLastRightPadding: React.PropTypes.bool,
+    noLastRightPadding: PropTypes.bool,
     /**
      * Border position.
      */
-    borderPosition: React.PropTypes.oneOf(['top', 'bottom']),
+    borderPosition: PropTypes.oneOf(['top', 'bottom']),
     /**
      * Border color.
      */
-    borderColor: React.PropTypes.string,
+    borderColor: PropTypes.string,
     /**
      * Border thickness in pixels.
      */
-    borderThickness: React.PropTypes.number,
+    borderThickness: PropTypes.number,
     /**
      * Border width ratio from the tab width.
      * Setting this to 1 will set border width to exactly the tab width.
      */
-    borderWidthRatio: React.PropTypes.number,
+    borderWidthRatio: PropTypes.number,
     /**
      * This value is used when user tries to drag the tabs far to right or left.
      * Setting this to 100 for example user will be able to  drag the tabs 100px
      * far to right and left.
      */
-    safeMargin: React.PropTypes.number,
+    safeMargin: PropTypes.number,
     /**
      * Initial translation. Ignore this.
      */
-    initialTranslation: React.PropTypes.number,
+    initialTranslation: PropTypes.number,
     /**
      * React motion configurations.
      * [More about this here](https://github.com/chenglou/react-motion#--spring-val-number-config-springhelperconfig--opaqueconfig)
      */
-    stiffness: React.PropTypes.number,
+    stiffness: PropTypes.number,
     /**
      * React motion configurations.
      * [More about this here](https://github.com/chenglou/react-motion#--spring-val-number-config-springhelperconfig--opaqueconfig)
      */
-    damping: React.PropTypes.number,
+    damping: PropTypes.number,
     /**
      * Drag resistance coeffiecent.
      * Higher resitance tougher the user can drag the tabs.
      */
-    resistanceCoeffiecent: React.PropTypes.number,
+    resistanceCoeffiecent: PropTypes.number,
     /**
      * Gravity acceleration.
      * Higher resitance tougher the user can drag the tabs.
      */
-    gravityAccelarion: React.PropTypes.number,
+    gravityAccelarion: PropTypes.number,
     /**
      * [Learn more](https://en.wikipedia.org/wiki/Drag_coefficient)
      */
-    dragCoefficient: React.PropTypes.number,
+    dragCoefficient: PropTypes.number,
   };
 
   static defaultProps = {

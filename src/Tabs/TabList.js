@@ -1,26 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import autoprefixer from './prefixer';
 import TabListItem from './TabListItem';
 
 export default class TabList extends React.Component {
 
   static propTypes = {
-    items: React.PropTypes.arrayOf(React.PropTypes.shape({
-      element: React.PropTypes.element.isRequired,
-      width: React.PropTypes.number.isRequired,
-      left: React.PropTypes.number.isRequired,
+    items: PropTypes.arrayOf(PropTypes.shape({
+      element: PropTypes.element.isRequired,
+      width: PropTypes.number.isRequired,
+      left: PropTypes.number.isRequired,
     })).isRequired,
-    alignCenter: React.PropTypes.bool,
-    onItemChange: React.PropTypes.func.isRequired,
-    itemStyle: React.PropTypes.object,
-    fitItems: React.PropTypes.bool,
-    onItemClick: React.PropTypes.func.isRequired,
-    noFirstLeftPadding: React.PropTypes.bool,
-    noLastRightPadding: React.PropTypes.bool,
-    itemClassName: React.PropTypes.string,
-    containerWidth: React.PropTypes.number,
-    activeStyle: React.PropTypes.object.isRequired,
-    isItemActive: React.PropTypes.func.isRequired,
+    alignCenter: PropTypes.bool,
+    onItemChange: PropTypes.func.isRequired,
+    itemStyle: PropTypes.object,
+    fitItems: PropTypes.bool,
+    onItemClick: PropTypes.func.isRequired,
+    noFirstLeftPadding: PropTypes.bool,
+    noLastRightPadding: PropTypes.bool,
+    itemClassName: PropTypes.string,
+    containerWidth: PropTypes.number,
+    activeStyle: PropTypes.object.isRequired,
+    isItemActive: PropTypes.func.isRequired,
   };
 
   /**

@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import autoprefixer from './prefixer';
 
 export default class ListBorder extends React.Component {
   static propTypes = {
-    borderThickness: React.PropTypes.number,
-    borderColor: React.PropTypes.string,
-    borderWidth: React.PropTypes.number,
-    borderTranslateX: React.PropTypes.number,
+    borderThickness: PropTypes.number,
+    borderColor: PropTypes.string,
+    borderWidth: PropTypes.number,
+    borderTranslateX: PropTypes.number,
   };
 
   getBorderStyle() {

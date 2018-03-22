@@ -1,22 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import autoprefixer from './prefixer';
 
 export default class TabListItem extends React.Component {
   static propTypes = {
-    item: React.PropTypes.shape({
-      element: React.PropTypes.element.isRequired,
-      width: React.PropTypes.number.isRequired,
-      left: React.PropTypes.number.isRequired,
+    item: PropTypes.shape({
+      element: PropTypes.element.isRequired,
+      width: PropTypes.number.isRequired,
+      left: PropTypes.number.isRequired,
     }).isRequired,
-    onChange: React.PropTypes.func.isRequired,
-    style: React.PropTypes.object,
-    fitInContainer: React.PropTypes.bool,
-    onClick: React.PropTypes.func.isRequired,
-    noLeftPadding: React.PropTypes.bool,
-    noRightPadding: React.PropTypes.bool,
-    className: React.PropTypes.string,
-    isItemActive: React.PropTypes.func.isRequired,
-    activeStyle: React.PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired,
+    style: PropTypes.object,
+    fitInContainer: PropTypes.bool,
+    onClick: PropTypes.func.isRequired,
+    noLeftPadding: PropTypes.bool,
+    noRightPadding: PropTypes.bool,
+    className: PropTypes.string,
+    isItemActive: PropTypes.func.isRequired,
+    activeStyle: PropTypes.object.isRequired,
   };
 
   checkChanged = (width, left) => {
