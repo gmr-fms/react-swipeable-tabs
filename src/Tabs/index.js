@@ -295,7 +295,7 @@ export default class Tabs extends React.Component {
   detectRefContainerWidth = () => {
     if(this.refContainer) {
       this.animator.setContainerWidth(this.refContainer
-        .parentElement.parentElement.clientWidth);
+        .parentElement.parentElement.parentElement.clientWidth);
     }
   }
 
@@ -365,27 +365,21 @@ export default class Tabs extends React.Component {
 
   render() {
     return (
-      <div
-        style={this.getWrapperStyle()}
-        ref={refWrapper => this.refWrapper = refWrapper}>
-        <Measure
-          bounds>
+      <div style={this.getWrapperStyle()} ref={ref => this.refWrapper = ref}>
+        <Measure ref={ref => this.refMeasure = ref} bounds>
           {({ measureRef }) => (
             <div ref={measureRef}>
-              <Hammer
-                onPanStart={this.onPanStart}
-                onPanEnd={this.onPanEnd}
-                onPan={this.onPan}
-              >
-                <div
-                  ref={refContainer => this.refContainer = refContainer}
-                  style={this.getContainerStyle()}>
-                  <Motion
-                    defaultStyle={this.getInitialFrame()}
-                    style={this.calculateNextFrame()}>
-                    {({ translateX, borderTranslateX, borderWidth }) =>
-                      this.renderList(translateX, borderTranslateX, borderWidth)}
-                  </Motion>
+              <Hammer onPanStart={this.onPanStart}
+                onPanEnd={this.onPanEnd} onPan={this.onPan}>
+                <div style={this.getContainerStyle()}>
+                  <div ref={ref => this.refContainer = ref}>
+                    <Motion
+                      defaultStyle={this.getInitialFrame()}
+                      style={this.calculateNextFrame()}>
+                      {({ translateX, borderTranslateX, borderWidth }) =>
+                        this.renderList(translateX, borderTranslateX, borderWidth)}
+                    </Motion>
+                  </div>
                 </div>
               </Hammer>
             </div>
